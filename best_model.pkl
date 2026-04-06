@@ -1,7 +1,0 @@
-import requests
-
-url = "https://drive.google.com/file/d/14IiqyMinDrXeKhW85L4XZWRhKcODXNbl/view?usp=sharing"
-response = requests.get(url)
-
-with open("best_model.pkl", "wb") as f:
-    f.write(response.content)
