@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import joblib
 import pickle
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -7,11 +8,8 @@ from scipy import stats
 from sklearn.model_selection import RandomizedSearchCV
 
 
-with open("best_model.pkl", "rb") as file:
-    model = pickle.load(file)
-
-with open("encoder.pkl", "rb") as file:
-    encoder = pickle.load(file)
+model = joblib.load("best_model.joblib")
+encoder = joblib.load("encoder.joblib")
 
 st.set_page_config(
     page_title="EcoType: Forest Cover Type Prediction Using Machine Learning",
